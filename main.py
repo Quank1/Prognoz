@@ -19,4 +19,5 @@ while start:
     else:
         response = requests.get("https://api.openweathermap.org/data/2.5/weather", params=params)
         x = response.json()
-        print(x["weather"][0]['main'])
+        print(f"Погода - {x["weather"][0]['description']}")
+        print(f"Максимальная температура - {int(x["main"]['temp_max'])} °C, минимальная - {int(x["main"]['temp_min'])} °C")
